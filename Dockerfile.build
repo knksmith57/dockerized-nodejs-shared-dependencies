@@ -1,0 +1,8 @@
+FROM node:erbium-alpine
+
+WORKDIR /app
+RUN npm install webpack webpack-cli
+
+COPY webpack.config.js .
+
+CMD npx webpack --watch

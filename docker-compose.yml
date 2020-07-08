@@ -1,0 +1,24 @@
+version: '3'
+
+services:
+  build:
+    build:
+      context: .
+      dockerfile: Dockerfile.build
+    volumes:
+      - 'external_dependencies:/node_modules:ro'
+      - './dist:/app/dist'
+      - './src:/app/src:ro'
+    depends_on:
+      - 'dependencies'
+
+  dependencies:
+    build:
+      context: .
+      dockerfile: Dockerfile.external
+    volumes:
+      - './package.json:/app/package.json:ro'
+      - 'external_dependencies:/app/node_modules'
+
+volumes:
+  external_dependencies: ~

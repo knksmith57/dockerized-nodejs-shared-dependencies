@@ -1,0 +1,11 @@
+{
+  "name": "dockerized-nodejs-shared-dependencies",
+  "version": "0.0.0",
+  "private": true,
+  "author": "",
+  "devDependencies": {
+    "css-loader": "^3.2.0",
+    "lodash": "^4.17.15",
+    "style-loader": "^1.0.0"
+  }
+}

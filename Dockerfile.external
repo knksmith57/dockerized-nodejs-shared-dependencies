@@ -1,0 +1,10 @@
+FROM node:erbium-alpine
+
+WORKDIR /app
+RUN apk add -U entr
+
+COPY package*.json ./
+RUN npm ci
+
+ENTRYPOINT [ ]
+CMD [ "sh", "-c", "ls package.json | entr npm install" ]
